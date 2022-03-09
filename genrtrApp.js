@@ -1,13 +1,13 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generatePage = require('./src/page-template.js');
+const { generatePage } = require('./src/page-template.js');
 
 
 const promptUser = () => {
   return inquirer.prompt([
     {
       type: 'input',
-      name: 'title',
+      name: 'projectTitle',
       message: 'What is the title of your project?'
     },
     {
@@ -45,22 +45,19 @@ const promptUser = () => {
       name: 'email',
       message: 'What is your email address?'
     }
-  ]);
+  ])
 };
 
-promptUser().then(answers => console.log(answers));
 
+promptUser()
+  // .then(response => console.log(response))
+.then(response => {
 
+    const READme = generatePage(response);
 
+    fs.writeFile('index.html', READme, err => {
+      if (err) throw new Error(err);
 
-// fs.writeFile('index.html', generatePage(), err => {
-//   if (err) throw err;
-  
-//   console.log('READme complete! Check out index.html to see the output!');
-// });
-
-
-
-
-
-
+      console.log('Page created!')
+    });
+  });
