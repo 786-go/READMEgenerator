@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { generatePage } = require('./src/page-template.js');
-
+const markdownGenerator  = require('./src/markdownGenerator')
 
 const promptUser = () => {
   return inquirer.prompt([
@@ -24,6 +24,12 @@ const promptUser = () => {
       type: 'input',
       name: 'usage',
       message: 'Please provide any usage information for users to know:'
+    },
+    {
+      type: 'list',
+      name: 'license',
+      choices:["MIT","ISC","Apache2.0","GPL"],
+      message: 'What licenses do you have?'
     },
     {
       type: 'input',
@@ -50,9 +56,13 @@ const promptUser = () => {
 
 
 promptUser()
+
   // .then(response => console.log(response))
 .then(response => {
-
+const markdown = markdownGenerator(response)
+fs.writeFileSync('./outputREADME.md', markdown, err => {
+  if (err) throw new Error(err);
+})
     const READme = generatePage(response);
 
     fs.writeFile('index.html', READme, err => {

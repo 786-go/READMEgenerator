@@ -15,9 +15,9 @@ const generatePage = (generatePage) => {
       
       <h1>${generatePage.projectTitle}</h1>
       
-  
       <h3>Description</h3>
-      ${generatePage.description}
+        ${generatePage.description}
+
       <section>
           <h3>Table of Contents</h3>
           <ul>
@@ -31,22 +31,23 @@ const generatePage = (generatePage) => {
       </section>
   
       <h3 id="install">Installation</h3>
-      ${generatePage.installation}
+        ${generatePage.installation}
         
       <h3 id="usage">Usage</h3>
-      ${generatePage.usage}
+        ${generatePage.usage}
   
       <h3 id="license">License</h3>
+      ${generatePage.license}
   
       <h3 id="contribute">Contributing</h3>
-      ${generatePage.contribution}
+        ${generatePage.contribution}
   
       <h3 id="tests">Tests</h3>
-      ${generatePage.test}
+        ${generatePage.test}
   
       <h3 id="questions">Questions</h3>
-      <a href="https://github.com/${generatePage.github}">Github</a>
-      Email address for further questions and inquiries: ${generatePage.email}
+        <p><a href="https://github.com/${generatePage.github}">Github</a></p>
+        <p>Email address for further questions and inquiries: ${generatePage.email}</p>
   
       
     </body>
