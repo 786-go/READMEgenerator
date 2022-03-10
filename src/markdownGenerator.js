@@ -28,10 +28,10 @@ ${data.usage}
 ${data.license}
 
 ### Contribute
-${data.contribute}
+${data.contribution}
 
 ### Tests
-${data.tests}
+${data.test}
 
 ### Questions
 Email :${data.email}
