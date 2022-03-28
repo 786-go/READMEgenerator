@@ -1,6 +1,7 @@
+
 const markdownGenerator = (data) => {
-    return(`
-# Project Title :${data.projectTitle}
+    return (`
+# Project Title: ${data.projectTitle}
 
 ## Table Of Contents
 ----------------------
@@ -39,6 +40,6 @@ Developer's Profile:
 [Github](https://github.com/${data.github})
 
     `)
-}
+};
 
 module.exports = markdownGenerator;

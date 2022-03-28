@@ -56,13 +56,12 @@ const promptUser = () => {
 
 
 promptUser()
-
-  // .then(response => console.log(response))
 .then(response => {
 const markdown = markdownGenerator(response)
-fs.writeFileSync('./outputREADME.md', markdown, err => {
+fs.writeFileSync('./README.md', markdown, err => {
   if (err) throw new Error(err);
 })
+
     const READme = generatePage(response);
 
     fs.writeFile('index.html', READme, err => {

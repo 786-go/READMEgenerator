@@ -1,5 +1,5 @@
 
-# Project Title :ASDA
+# Project Title: READme Generator
 
 ## Table Of Contents
 ----------------------
@@ -14,27 +14,27 @@
 
 
 ### Description
-adasdf
+This app creates readme's using node.js through the command line.
 
 ### Installation
-asdfasdf
+It requires node.js to be installed on the machine. 
 
 ### Usage
-asdfasdf
+It's important to have some sort of technical computer background.
 
 ### License
-![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)
-MIT
+![GitHub license](https://img.shields.io/badge/license-GPL-green.svg)
+GPL
 
 ### Contribute
-undefined
+Make a pull request and we can go from there.
 
 ### Tests
-undefined
+n/a
 
 ### Questions
-Email :asdf
+Email :n/a
 Developer's Profile:
-[Github](https://github.com/asdf)
+[Github](https://github.com/786-go)
 
     
