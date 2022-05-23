@@ -49,7 +49,7 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'email',
-      message: 'Please provide an email address should anyone have questions?'
+      message: 'Please provide an email address should anyone have questions about your project:'
     }
   ])
 };
