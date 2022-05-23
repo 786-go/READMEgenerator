@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { generatePage } = require('./src/page-template.js');
-const markdownGenerator  = require('./src/markdownGenerator')
+const markdownGenerator = require('./src/markdownGenerator')
 
 const promptUser = () => {
   return inquirer.prompt([
@@ -28,7 +28,7 @@ const promptUser = () => {
     {
       type: 'list',
       name: 'license',
-      choices:["MIT","ISC","Apache2.0","GPL"],
+      choices: ["MIT", "ISC", "Apache2.0", "GPL"],
       message: 'What licenses do you have?'
     },
     {
@@ -49,24 +49,26 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'email',
-      message: 'What is your email address?'
+      message: 'Please provide an email address should anyone have questions?'
     }
   ])
 };
 
 
 promptUser()
-.then(response => {
-const markdown = markdownGenerator(response)
-fs.writeFileSync('./README.md', markdown, err => {
-  if (err) throw new Error(err);
-})
-
-    const READme = generatePage(response);
-
-    fs.writeFile('index.html', READme, err => {
+  .then(response => {
+    const markdown = markdownGenerator(response)
+    fs.writeFileSync('./outputREADME.md', markdown, err => {
       if (err) throw new Error(err);
+      console.log('Page created!');
+    })
 
-      console.log('Page created!')
-    });
+
+
+    // // const READme = generatePage(response);
+    // // fs.writeFile('index.html', READme, err => {
+    // //   if (err) throw new Error(err);
+    // });
+
+    
   });
